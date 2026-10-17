@@ -108,12 +108,25 @@ git config --global user.email "your.email@example.com"
 
 | Command | What It Does & How It Works |
 | ----- | ----- |
+| `git init` | **Initializes a new local repository.** Creates a `.git` directory in the current folder to store Git history and settings. Run it from your project folder to start tracking that project; it does not create a commit or connect the repository to a remote such as GitHub. |
 | `git clone <url>` | **Downloads a repository.** Downloads a complete copy of a remote Git repository onto your local computer, sets up the default `origin` connection, and creates a local directory for it. |
 | `git pull` | **Fetches and merges remote changes.** Downloads the latest commits from the remote repository (e.g., GitHub) and merges them directly into your current local branch so your code stays up to date. |
 | `git status` | **Checks the repository state.** Compares local files to the last commit to show untracked files (new), modified files, and staged changes ready to be committed. |
 | `git add .` | **Stages changes.** Moves modified or new files into the *Staging Area* (draft area) preparing them to be included in the next commit snapshot. |
 | `git commit -m "msg"` | **Saves a snapshot locally.** Permanently saves the staged changes as a checkpoint in your local Git repository's history attached with a timestamp and your message. |
 | `git push` | **Uploads commits.** Sends all your local commits over the internet to update the remote repository (e.g., GitHub). |
+
+### Start a New Local Repository
+
+Use `git init` when you already have a project folder that you want to start tracking with Git. This is an alternative to cloning when you are creating a project locally rather than downloading an existing remote repository.
+
+```bash
+cd <project-folder>
+git init
+git status
+```
+
+Git creates a hidden `.git` directory in the project folder to store repository data. The project files are not committed automatically; stage and commit them with `git add` and `git commit`. To publish the repository to a hosting service, add a remote separately.
 
 ### Git Workflow Visualized
 
